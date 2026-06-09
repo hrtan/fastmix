@@ -1,0 +1,9 @@
+PyYAML<7.0,>=5.4
+fsspec[http]<2025.0,>=2022.5.0
+lightning-utilities<1.0,>=0.10.0
+packaging<24.0,>=20.0
+torch<3.0,>=2.1.0
+torchmetrics<2.0,>=0.7.0
+tqdm<5.0,>=4.57.0
+typing-extensions<5.0,>=4.4.0
+

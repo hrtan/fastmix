@@ -1,0 +1,12 @@
+# Force LF line endings for scripts and source files so they run correctly on Linux
+# no matter which platform they were committed from (avoids the
+# "set: pipefail: invalid option name" CRLF error when running shell scripts).
+*.sh    text eol=lf
+*.py    text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+*.jsonl text eol=lf
+
+# Tokenizer / config JSON: keep as text (normalized), data shards are binary.
+*.json  text
+*.bin   binary

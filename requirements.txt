@@ -1,0 +1,21 @@
+# Core Python dependencies for FastMix.
+#
+# NOTE: a few heavyweight / source-built dependencies are intentionally NOT listed here
+# and must be installed separately (see README.md "Setup"):
+#   - torch (with CUDA), built to match your GPU / CUDA version
+#   - flash-attention (provides the fused kernels used by lit_gpt)
+#   - the patched pytorch-lightning under third_party/pytorch-lightning-2.5.1.post0
+#   - lm-evaluation-harness under third_party/lm-evaluation-harness (only needed by
+#     train_fastmix_sft.py for downstream benchmark scoring)
+
+jsonargparse[signatures]   # CLI parsing for the training entrypoints
+transformers               # LlamaForCausalLM + AutoTokenizer
+tokenizers
+sentencepiece
+pyyaml
+numpy
+pandas
+pyarrow
+wandb
+zstd
+einops

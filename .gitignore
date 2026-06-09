@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.Python
+*.so
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Training / experiment outputs
+checkpoints/
+out/
+wandb/
+*.log
+*.out
+
+# Vendored third-party deps are committed, but ignore any build artifacts they
+# generate locally during `pip install` / `setup.py install`.
+third_party/**/build/
+third_party/**/dist/
+third_party/**/*.egg-info/
+third_party/**/.eggs/
+
+# Editor / OS cruft
+.DS_Store
+.idea/
+.vscode/
+*.swp

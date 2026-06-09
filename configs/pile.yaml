@@ -1,0 +1,47 @@
+# FastMix data-mixture configuration (The Pile, 17 domains).
+#
+# `train`: one entry per training source. The value is the *initial* sampling weight
+#          (set to 1.0 here so the search starts from a uniform mixture). The actual
+#          mixture is learned online during training.
+# `valid`: validation source(s). Only used by train_fastmix_val.py (the SFT variant
+#          uses the *_sft.jsonl files under data/sft as its search target instead).
+#
+# Every key must match the file prefix of the preprocessed .bin shards, e.g.
+# `train_the_pile_arxiv` -> train_the_pile_arxiv_*_*.bin in --train_data_dir.
+
+train:
+  train_the_pile_arxiv: 1.0
+  train_the_pile_freelaw: 1.0
+  train_the_pile_nih_exporter: 1.0
+  train_the_pile_pubmed_central: 1.0
+  train_the_pile_wikipedia_en: 1.0
+  train_the_pile_dm_mathematics: 1.0
+  train_the_pile_github: 1.0
+  train_the_pile_philpapers: 1.0
+  train_the_pile_stackexchange: 1.0
+  train_the_pile_enron_emails: 1.0
+  train_the_pile_gutenberg_pg_19: 1.0
+  train_the_pile_pile_cc: 1.0
+  train_the_pile_ubuntu_irc: 1.0
+  train_the_pile_europarl: 1.0
+  train_the_pile_hackernews: 1.0
+  train_the_pile_pubmed_abstracts: 1.0
+  train_the_pile_uspto_backgrounds: 1.0
+
+valid:
+  valid_the_pile_pile_cc: 1.0
+
+seed: 42
+
+# --- Proxy-model / optimization overrides (override the defaults in the train scripts) ---
+model_name: tinyllama_1M
+total_devices: 1
+num_of_devices: 1
+global_batch_size: 512
+micro_batch_size: 16
+max_step: 1001
+save_step_interval: 2000
+eval_step_interval: 20
+learning_rate: 0.0004
+min_lr: 0.0004
+warmup_steps: 100
