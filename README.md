@@ -1,4 +1,4 @@
-# FastMix
+# FastMix: Fast Data Mixture Optimization via Gradient Descent
 
 **FastMix** jointly trains a small proxy language model and *searches for the optimal
 data-mixture weights* over a set of training sources. Instead of doing an expensive grid
